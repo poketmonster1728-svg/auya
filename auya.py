@@ -22,7 +22,7 @@ if start == "암호화":
     st.code(final)
 elif start == "복호화":
     final2 = ""
-    decoding = st.text_area("암호문을 입력하세요:\n").split("\n")
+    decoding = st.text_area("암호문을 입력하세요(입력 완료 시 입력창 바깥 클릭):\n").split("\n")
     for h in decoding:
         mda = ""
         for h1 in h:
