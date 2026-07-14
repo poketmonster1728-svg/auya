@@ -19,13 +19,7 @@ if start == "암호화":
                 answer += "야"
         st.code(answer)
 elif start == "복호화":
-    decoding = []
-    st.code("암호문 입력(다 입력시 맨 밑에 X입력 후 엔터):")
-    while True:
-        encoded = st.selectbox()
-        if "x" in encoded:
-            break
-        decoding.append(encoded)
+    decoding = st.text_area("암호문을 입력하세요:\n")
     for h in decoding:
         mda = ""
         for h1 in h:
