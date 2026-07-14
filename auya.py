@@ -33,5 +33,6 @@ elif start == "복호화":
             else:
                 mda += "2"
         final2 += chr(int(mda,3))
+    st.code(final2)
 else:
     st.code("ㄲㅈ")
