@@ -1,6 +1,7 @@
 import streamlit as st
 start = st.text_input("모드 선택(암호화/복호화): ")
 if start == "암호화":
+    final = ""
     code = st.text_input("암호화 하고 싶은 단어: ")
     for i in code:
         a = ord(i)
@@ -17,8 +18,10 @@ if start == "암호화":
                 answer += "으"
             else:
                 answer += "야"
-        st.code(answer)
+        final += answer + "\n"
+    st.code(final)
 elif start == "복호화":
+    final2 = ""
     decoding = st.text_area("암호문을 입력하세요:\n").split("\n")
     for h in decoding:
         mda = ""
@@ -29,6 +32,6 @@ elif start == "복호화":
                 mda += "1"
             else:
                 mda += "2"
-        st.code(chr(int(mda,3)),end="")
+        final2 += chr(int(mda,3))
 else:
     st.code("ㄲㅈ")
