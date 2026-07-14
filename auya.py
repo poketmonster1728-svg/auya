@@ -1,7 +1,7 @@
-import sys
-start = input("모드 선택(암호화/복호화): ")
+import streamlit as st
+start = st.text_input("모드 선택(암호화/복호화): ")
 if start == "암호화":
-    code = input("암호화 하고 싶은 단어: ")
+    code = st.text_input("암호화 하고 싶은 단어: ")
     for i in code:
         a = ord(i)
         encoding = []
@@ -17,12 +17,12 @@ if start == "암호화":
                 answer += "으"
             else:
                 answer += "야"
-        print(answer)
+        st.code(answer)
 elif start == "복호화":
     decoding = []
-    print("암호문 입력(다 입력시 맨 밑에 X입력 후 엔터):")
+    st.code("암호문 입력(다 입력시 맨 밑에 X입력 후 엔터):")
     while True:
-        encoded = input()
+        encoded = st.selectbox()
         if "x" in encoded:
             break
         decoding.append(encoded)
@@ -35,6 +35,6 @@ elif start == "복호화":
                 mda += "1"
             else:
                 mda += "2"
-        print(chr(int(mda,3)),end="")
+        st.code(chr(int(mda,3)),end="")
 else:
-    print("ㄲㅈ")
+    st.code("ㄲㅈ")
