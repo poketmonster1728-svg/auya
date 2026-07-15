@@ -6,6 +6,8 @@ if start == "암호화":
     for i in code:
         a = ord(i)
         encoding = []
+        if a == 0:
+            encoding.append(a)
         while a > 0:
             encoding.append(a%3)
             a = a//3
